@@ -62,7 +62,6 @@ function send(){
   if(!i.value)return;
   c.innerHTML+=`<div class="msg user">${i.value}</div>`;
   setTimeout(()=>{
-    c.innerHTML+=`<div class="msg nexa">Estoy aquí para ayudarte 🤍</div>`;
     c.scrollTop=c.scrollHeight;
   },500);
   i.value="";
