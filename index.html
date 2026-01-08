@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>NEXA</title>
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:linear-gradient(#0ea5e9,#1e3a8a);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
+.app{
+  width:360px;
+  height:640px;
+  background:rgba(0,0,0,.5);
+  border-radius:16px;
+  padding:16px;
+}
+.chat{
+  height:350px;
+  overflow:auto;
+  background:rgba(0,0,0,.4);
+  padding:10px;
+  border-radius:10px;
+}
+.msg{margin:6px 0;}
+.user{text-align:right;}
+.nexa{color:#a5f3fc;}
+input,button{
+  width:100%;
+  padding:10px;
+  margin-top:8px;
+  border-radius:10px;
+  border:none;
+}
+button{
+  background:#22c55e;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+  <h2 style="text-align:center;">🌊 NEXA 🤖</h2>
+  <div class="chat" id="chat">
+    <div class="msg nexa">Hola 🤍 soy NEXA, ¿en qué te ayudo?</div>
+  </div>
+  <input id="input" placeholder="Escribe aquí...">
+  <button onclick="send()">Enviar</button>
+</div>
+
+<script>
+function send(){
+  const i=document.getElementById("input");
+  const c=document.getElementById("chat");
+  if(!i.value)return;
+  c.innerHTML+=`<div class="msg user">${i.value}</div>`;
+  setTimeout(()=>{
+    c.innerHTML+=`<div class="msg nexa">Estoy aquí para ayudarte 🤍</div>`;
+    c.scrollTop=c.scrollHeight;
+  },500);
+  i.value="";
+}
+</script>
+</body>
+</html>
